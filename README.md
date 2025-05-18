@@ -35,7 +35,7 @@ For each country's dataset:
 
 - ✅ Perform **summary stats** and null checks
 - ✅ Clean via **outlier clipping** and **median imputation**
-- ✅ Generate cleaned dataset: `data/<country>_clean.csv`
+- ✅ Generate cleaned dataset: 'data/<country>_clean.csv'
 - ✅ Produce exploratory charts for trends and correlation analysis
 - ✅ Enable **notebook reproducibility** and versioned cleaning code
 
@@ -63,9 +63,9 @@ jupyter lab      # or jupyter notebook
 
 | Country           | Notebook Path                      | Output CSV                    |
 | ----------------- | ---------------------------------- | ----------------------------- |
-| 🇧🇯 Benin        | `notebooks/benin_eda.ipynb`        | `data/benin_clean.csv`        |
-| 🇸🇱 Sierra Leone | `notebooks/sierraleone_eda.ipynb` | `data/sierraleone_clean.csv` |
-| 🇹🇬 Togo         | `notebooks/togo_eda.ipynb`         | `data/togo_clean.csv`         |
+| 🇧🇯 Benin        | 'notebooks/benin_eda.ipynb'        | 'data/benin_clean.csv'        |
+| 🇸🇱 Sierra Leone | 'notebooks/sierraleone_eda.ipynb' | 'data/sierraleone_clean.csv' |
+| 🇹🇬 Togo         | 'notebooks/togo_eda.ipynb'         | 'data/togo_clean.csv'         |
 
 *CSV outputs are automatically generated locally and not committed (see .gitignore).*
 
@@ -76,11 +76,11 @@ Implemented in src/solar_eda.py:
 
 | Step                               | Description                               |
 | ---------------------------------- | ----------------------------------------- |
-| Drop fully-null columns            | Removes columns like `Comments`           |
+| Drop fully-null columns            | Removes columns like 'Comments'           |
 | Fix negative night-time irradiance | Sets negative GHI/DNI/DHI to 0 at night   |
 | Z-score filtering                  | Drops rows with sensor Z > 3              |
 | Median imputation                  | Fills missing values in core fields       |
-| Feature engineering                | Adds `Hour`, `Month`, and `HasRain` flags |
+| Feature engineering                | Adds 'Hour', 'Month', and 'HasRain' flags |
 
 Callable via:
 from src.solar_eda import clean_solar_df
@@ -110,10 +110,10 @@ Each notebook contains:
 
 | Feature                          | Implemented                           |
 | -------------------------------- | ------------------------------------- |
-| Cleaning pipeline                | ✅ `clean_solar_df()` with helpers     |
+| Cleaning pipeline                | ✅ 'clean_solar_df()' with helpers     |
 | Country EDA notebooks            | ✅ 3 complete notebooks                |
 | Bubble plots / Wind roses        | ✅ Included                            |
-| CSV export and ignore policy     | ✅ via `data/` and `.gitignore`        |
+| CSV export and ignore policy     | ✅ via 'data/' and '.gitignore'        |
 | Visuals for trends and anomalies | ✅ All Task 2 visuals                  |
 | Git commits & PR hygiene         | ✅ Commit messages + PR templates used |
 
