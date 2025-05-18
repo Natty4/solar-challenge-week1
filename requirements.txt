@@ -1,3 +1,7 @@
 pandas
 numpy
 jupyter 
+scipy
+seaborn
+windrose
+plotly
