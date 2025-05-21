@@ -1,5 +1,6 @@
 # Solar Challenge - W0 ( 🌞 Solar Site Data Analysis & Region Ranking )
 
+
 This repository contains a data pipeline and EDA framework to clean, explore, and compare solar sensor datasets from multiple West African countries. The goal is to enable data-driven region ranking for solar farm expansion.
 
 ---
@@ -135,7 +136,6 @@ Implemented in src/solar_eda.py:
 
 #### Callable via:
 from src.solar_eda import SolarCleaner
-
 cleaner = SolarCleaner()
 df_clean = cleaner.clean(df)
 
