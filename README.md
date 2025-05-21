@@ -1,4 +1,6 @@
+
 # Solar Challenge - W0 ( 🌞 Solar Site Data Analysis & Region Ranking )
+
 
 This repository contains a data pipeline and EDA framework to clean, explore, and compare solar sensor datasets from multiple West African countries. The goal is to enable data-driven region ranking for solar farm expansion.
 
@@ -163,7 +165,6 @@ Each notebook contains:
 | CSV export and ignore policy     | ✅ via 'data/' and '.gitignore'            |
 | Visuals for trends and anomalies | ✅ All Task 2 visuals                      |
 | Git commits & PR hygiene         | ✅ Commit messages + PR templates used     |
-
 
 
 
