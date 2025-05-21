@@ -1,4 +1,4 @@
-# # Solar Challenge - W0 ( 🌞 Solar Site Data Analysis & Region Ranking )
+# Solar Challenge - W0 ( 🌞 Solar Site Data Analysis & Region Ranking )
 
 This repository contains a data pipeline and EDA framework to clean, explore, and compare solar sensor datasets from multiple West African countries. The goal is to enable data-driven region ranking for solar farm expansion.
 
@@ -117,7 +117,7 @@ streamlit run app/main.py
 3. Use the **sidebar** to:
 
 - ✅ **Select a country** (Country Insights page)
-- 🔄 **Navigate to** "Cross-Country Comparison"
+- ✅ Switch to "Cross-Country Comparison" page from the sidebar
 
 
 
@@ -133,8 +133,9 @@ Implemented in src/solar_eda.py:
 | Median imputation                  | Fills missing values in core fields       |
 | Feature engineering                | Adds 'Hour', 'Month', and 'HasRain' flags |
 
-Callable via:
+#### Callable via:
 from src.solar_eda import SolarCleaner
+
 cleaner = SolarCleaner()
 df_clean = cleaner.clean(df)
 
@@ -143,42 +144,34 @@ df_clean = cleaner.clean(df)
 
 Each notebook contains:
 
-    Summary statistics + null audit
-
-    Irradiance/temperature time series
-
-    Diurnal and monthly patterns
-
-    Outlier and missing-value handling
-
-    Wind rose and histograms
-
-    Correlation heatmaps
-
-    Bubble chart (GHI vs Tamb, size = RH or BP)
+- Summary statistics + null audit
+- Irradiance/temperature time series
+- Diurnal and monthly patterns
+- Outlier and missing-value handling
+- Wind rose and histograms
+- Correlation heatmaps
+- Bubble chart (GHI vs Tamb, size = RH or BP)
 
 
 ## 📈 Contribution Summary
 
-| Feature                          | Implemented                           |
-| -------------------------------- | ------------------------------------- |
-| Cleaning pipeline                | ✅ 'clean_solar_df()' with helpers     |
-| Country EDA notebooks            | ✅ 3 complete notebooks                |
-| Bubble plots / Wind roses        | ✅ Included                            |
-| CSV export and ignore policy     | ✅ via 'data/' and '.gitignore'        |
-| Visuals for trends and anomalies | ✅ All Task 2 visuals                  |
-| Git commits & PR hygiene         | ✅ Commit messages + PR templates used |
+| Feature                          | Implemented                                |
+| -------------------------------- | -----------------------------------------  |
+| Cleaning pipeline                | ✅ 'SolarCleaner.clean()' with helper      |
+| Country EDA notebooks            | ✅ 3 complete notebooks                    |
+| Bubble plots / Wind roses        | ✅ Included                                |
+| CSV export and ignore policy     | ✅ via 'data/' and '.gitignore'            |
+| Visuals for trends and anomalies | ✅ All Task 2 visuals                      |
+| Git commits & PR hygiene         | ✅ Commit messages + PR templates used     |
 
 
 
 
 ## ✅ Next Steps
 
-Define region-ranking metrics based on GHI, Tamb, RH, and BP
-
-Add export/download feature in the dashboard
-
-Integrate daily or monthly aggregation toggle
+- Define region-ranking metrics based on GHI, Tamb, RH, and BP
+- Add export/download feature in the dashboard
+- Integrate daily or monthly aggregation toggle
 
 
 
