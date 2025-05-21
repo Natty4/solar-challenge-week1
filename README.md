@@ -1,4 +1,3 @@
-
 # Solar Challenge - W0 ( 🌞 Solar Site Data Analysis & Region Ranking )
 
 
@@ -58,6 +57,15 @@ For each country's dataset:
 - ✅ Produce exploratory charts for trends and correlation analysis  
 - ✅ Enable **notebook reproducibility** and versioned cleaning code  
 
+### Task 3 - Cross-Country Comparison
+
+- ✅ Load cleaned datasets for Benin, Sierra Leone, and Togo  
+- ✅ Plot **boxplots** of GHI, DNI, and DHI across countries  
+- ✅ Generate a **summary statistics table** (mean, median, std)  
+- ✅ Run **ANOVA statistical test** on GHI values  
+- ✅ Add 3 key markdown observations about country differences  
+- ✅ (Bonus) Include a **bar chart** ranking average GHI by country  
+
 ### Bonus Task - Streamlit Dashboard
 
 - ✅ Build an interactive dashboard using **Streamlit**
@@ -98,11 +106,15 @@ jupyter lab      # or jupyter notebook
 
 ### 3. Open and run a country notebook
 
-| Country           | Notebook Path                      | Output CSV                    |
-| ----------------- | ---------------------------------- | ----------------------------- |
-| 🇧🇯 Benin        | 'notebooks/benin_eda.ipynb'        | 'data/benin_clean.csv'        |
-| 🇸🇱 Sierra Leone | 'notebooks/sierraleone_eda.ipynb' | 'data/sierraleone_clean.csv' |
-| 🇹🇬 Togo         | 'notebooks/togo_eda.ipynb'         | 'data/togo_clean.csv'         |
+
+| Notebook Type     | Country / Topic     | Path                                      | Output CSV                  |
+| ----------------- | --------------------| ----------------------------------------- |-----------------------------|
+| Country EDA       | 🇧🇯 Benin             | 'notebooks/benin_eda.ipynb'              | 'data/benin_clean.csv'       |
+| Country EDA       | 🇸🇱 Sierra Leone      | 'notebooks/sierraleone_eda.ipynb'        | 'data/sierraleone_clean.csv' |
+| Country EDA       | 🇹🇬 Togo              | 'notebooks/togo_eda.ipynb'               | 'data/togo_clean.csv'        |
+| 🔁 Cross-Country  | Comparison (All)    | 'notebooks/compare_countries.ipynb'      |   —                          |
+
+
 
 *CSV outputs are automatically generated locally and not committed (see .gitignore).*
 
@@ -146,33 +158,38 @@ df_clean = cleaner.clean(df)
 
 Each notebook contains:
 
-- Summary statistics + null audit
-- Irradiance/temperature time series
-- Diurnal and monthly patterns
-- Outlier and missing-value handling
-- Wind rose and histograms
-- Correlation heatmaps
-- Bubble chart (GHI vs Tamb, size = RH or BP)
+- ✅ Summary statistics + null audit
+- ✅ Irradiance/temperature time series
+- ✅ Diurnal and monthly patterns
+- ✅ Outlier and missing-value handling
+- ✅ Wind rose and histograms
+- ✅ Correlation heatmaps
+- ✅ Bubble charts (e.g. GHI vs Tamb)
+- ✅ 📊 Cross-country boxplots and summary stats *(Task 3)*
+- ✅ 📈 GHI country ranking bar chart *(Task 3)*
+- ✅ 🧪 ANOVA test results for GHI *(Task 3)*
 
 
 ## 📈 Contribution Summary
 
-| Feature                          | Implemented                                |
-| -------------------------------- | -----------------------------------------  |
-| Cleaning pipeline                | ✅ 'SolarCleaner.clean()' with helper      |
-| Country EDA notebooks            | ✅ 3 complete notebooks                    |
-| Bubble plots / Wind roses        | ✅ Included                                |
-| CSV export and ignore policy     | ✅ via 'data/' and '.gitignore'            |
-| Visuals for trends and anomalies | ✅ All Task 2 visuals                      |
-| Git commits & PR hygiene         | ✅ Commit messages + PR templates used     |
+
+| Feature                          | Implemented                           |
+| -------------------------------- | ------------------------------------- |
+| Cleaning pipeline                | ✅ 'SolarCleaner' in **solar_eda.py**   |
+| Country EDA notebooks            | ✅ 3 complete notebooks                |
+| Cross-country comparison         | ✅ **compare_countries.ipynb** added     |
+| Statistical tests                | ✅ One-way ANOVA for GHI               |
+| Dashboard + visual summaries     | ✅ Interactive Streamlit app           |
+| Git commits & PR hygiene         | ✅ Followed Git feature branching      |
+
 
 
 
 ## ✅ Next Steps
 
-- Define region-ranking metrics based on GHI, Tamb, RH, and BP
-- Add export/download feature in the dashboard
-- Integrate daily or monthly aggregation toggle
+- 🏆 Define region-ranking logic (e.g. weighted GHI/Tamb scores)
+- 💾 Add CSV export/download feature to the dashboard
+- 📆 Enable daily/monthly aggregation toggle in visuals
 
 
 
