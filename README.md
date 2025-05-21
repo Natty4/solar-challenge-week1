@@ -185,6 +185,7 @@ Each notebook contains:
 
 
 
+
 ## ✅ Next Steps
 
 - 🏆 Define region-ranking logic (e.g. weighted GHI/Tamb scores)
