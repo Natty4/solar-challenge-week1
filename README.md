@@ -136,6 +136,7 @@ Implemented in src/solar_eda.py:
 
 #### Callable via:
 from src.solar_eda import SolarCleaner
+
 cleaner = SolarCleaner()
 df_clean = cleaner.clean(df)
 
