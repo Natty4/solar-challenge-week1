@@ -17,10 +17,12 @@ This repository contains a data pipeline and EDA framework to clean, explore, an
 ├── dashboard_screenshot/      # Static images of dashboard pages
 ├── notebooks/                 # Country-specific EDA notebooks
 │   ├── benin_eda.ipynb
+│   ├── compare_countries.ipynb
 │   ├── sierraleone_eda.ipynb
 │   └── togo_eda.ipynb
 │   └── README.md 
 ├── src/
+│   └── comparison_utils.py           # Shared cleaning utilities
 │   └── solar_eda.py           # Shared cleaning utilities
 ├── data/                      # Local-only cleaned data (gitignored)
 │   ├── benin_clean.csv
@@ -39,54 +41,53 @@ This repository contains a data pipeline and EDA framework to clean, explore, an
 
 **Main goal:** Profile, clean, and explore solar datasets from different countries to support region ranking for solar development.
 
-### Task 1 - Initial Setup and Project Structure
+### - Initial Setup and Project Structure
 
-- ✅ Set up GitHub repository with clear folder structure
-- ✅ Define modular code layout (`src/`, `notebooks/`, `data/`, `tests/`)
-- ✅ Add `.gitignore` to exclude local artifacts
-- ✅ Create and document environment dependencies (`requirements.txt`)
-- ✅ Create a shared data cleaning script for reuse across notebooks
+- ☑️ Set up GitHub repository with clear folder structure
+- ☑️ Define modular code layout (`src/`, `notebooks/`, `data/`, `tests/`)
+- ☑️ Add `.gitignore` to exclude local artifacts
+- ☑️ Create and document environment dependencies (`requirements.txt`)
+- ☑️ Create a shared data cleaning script for reuse across notebooks
 
-### Task 2 - Profiling, Cleaning, and EDA
+### - Profiling, Cleaning, and EDA
 
 For each country's dataset:
 
-- ✅ Perform **summary statistics** and null checks  
-- ✅ Clean via **outlier clipping** and **median imputation**  
-- ✅ Generate cleaned dataset: `data/<country>_clean.csv`  
-- ✅ Produce exploratory charts for trends and correlation analysis  
-- ✅ Enable **notebook reproducibility** and versioned cleaning code  
+- ☑️ Perform **summary statistics** and null checks  
+- ☑️ Clean via **outlier clipping** and **median imputation**  
+- ☑️ Generate cleaned dataset: `data/<country>_clean.csv`  
+- ☑️ Produce exploratory charts for trends and correlation analysis  
+- ☑️ Enable **notebook reproducibility** and versioned cleaning code  
 
-### Task 3 - Cross-Country Comparison
+### - Cross-Country Comparison
 
-- ✅ Load cleaned datasets for Benin, Sierra Leone, and Togo  
-- ✅ Plot **boxplots** of GHI, DNI, and DHI across countries  
-- ✅ Generate a **summary statistics table** (mean, median, std)  
-- ✅ Run **ANOVA statistical test** on GHI values  
-- ✅ Add 3 key markdown observations about country differences  
-- ✅ (Bonus) Include a **bar chart** ranking average GHI by country  
+- ☑️ Load cleaned datasets for Benin, Sierra Leone, and Togo  
+- ☑️ Plot **boxplots** of GHI, DNI, and DHI across countries  
+- ☑️ Generate a **summary statistics table** (mean, median, std)  
+- ☑️ Run **ANOVA statistical test** on GHI values  
+- ☑️ Add 3 key markdown observations about country differences  
+- ☑️ (Bonus) Include a **bar chart** ranking average GHI by country  
 
 ### Bonus Task - Streamlit Dashboard
 
-- ✅ Build an interactive dashboard using **Streamlit**
-- ✅ Enable **multipage layout**:
+- ☑️ Build an interactive dashboard using **Streamlit**
+- ☑️ Enable **multipage layout**:
   - `main.py` → country-specific solar insights
   - `comparison.py` → cross-country metric analysis
-- ✅ Visualize EDA summaries with:
+- ☑️ Visualize EDA summaries with:
   - GHI boxplots
   - Time series plots
   - Scatter charts
   - Summary tables
-- ✅ Add interactive widgets:
+- ☑️ Add interactive widgets:
   - Country selector
   - Metric dropdown
-- ✅ Store code under `app/` folder
-- ✅ Document dashboard usage in [`app/README.md`](app/README.md)
-- ✅ Added screenshots in `dashboard_screenshot/`
+- ☑️ Store code under `app/` folder
+- ☑️ Document dashboard usage in [`app/README.md`](app/README.md)
+- ☑️ Added screenshots in `dashboard_screenshot/`
 
 ---
 
-## 🚀 Run the EDA Notebooks
 
 ### 1. Setup environment
 
@@ -130,8 +131,8 @@ streamlit run app/main.py
 
 3. Use the **sidebar** to:
 
-- ✅ **Select a country** (Country Insights page)
-- ✅ Switch to "Cross-Country Comparison" page from the sidebar
+- ☑️ **Select a country** (Country Insights page)
+- ☑️ Switch to "Cross-Country Comparison" page from the sidebar
 
 
 
@@ -158,16 +159,16 @@ df_clean = cleaner.clean(df)
 
 Each notebook contains:
 
-- ✅ Summary statistics + null audit
-- ✅ Irradiance/temperature time series
-- ✅ Diurnal and monthly patterns
-- ✅ Outlier and missing-value handling
-- ✅ Wind rose and histograms
-- ✅ Correlation heatmaps
-- ✅ Bubble charts (e.g. GHI vs Tamb)
-- ✅ 📊 Cross-country boxplots and summary stats *(Task 3)*
-- ✅ 📈 GHI country ranking bar chart *(Task 3)*
-- ✅ 🧪 ANOVA test results for GHI *(Task 3)*
+- ☑️ Summary statistics + null audit
+- ☑️ Irradiance/temperature time series
+- ☑️ Diurnal and monthly patterns
+- ☑️ Outlier and missing-value handling
+- ☑️ Wind rose and histograms
+- ☑️ Correlation heatmaps
+- ☑️ Bubble charts (e.g. GHI vs Tamb)
+- ☑️ 📊 Cross-country boxplots and summary stats *(Task 3)*
+- ☑️ 📈 GHI country ranking bar chart *(Task 3)*
+- ☑️ 🧪 ANOVA test results for GHI *(Task 3)*
 
 
 ## 📈 Contribution Summary
@@ -175,22 +176,13 @@ Each notebook contains:
 
 | Feature                          | Implemented                           |
 | -------------------------------- | ------------------------------------- |
-| Cleaning pipeline                | ✅ 'SolarCleaner' in **solar_eda.py**   |
-| Country EDA notebooks            | ✅ 3 complete notebooks                |
-| Cross-country comparison         | ✅ **compare_countries.ipynb** added     |
-| Statistical tests                | ✅ One-way ANOVA for GHI               |
-| Dashboard + visual summaries     | ✅ Interactive Streamlit app           |
-| Git commits & PR hygiene         | ✅ Followed Git feature branching      |
-
-
-
-
-
-## ✅ Next Steps
-
-- 🏆 Define region-ranking logic (e.g. weighted GHI/Tamb scores)
-- 💾 Add CSV export/download feature to the dashboard
-- 📆 Enable daily/monthly aggregation toggle in visuals
+| Cleaning pipeline                | ☑️ 'SolarCleaner' in **solar_eda.py**   |
+| Country EDA notebooks            | ☑️ 3 countries + comparison           |
+| Cross-country comparison         | ☑️ **compare_countries.ipynb** added     |
+| Modular code design              | ☑️ **utils.py** shared logic    |
+| Statistical tests                | ☑️ One-way ANOVA for GHI               |
+| Dashboard + visual summaries     | ☑️ Interactive Streamlit app shared utils|
+| Git commits & PR hygiene         | ☑️ Followed Git feature branching      |
 
 
 
